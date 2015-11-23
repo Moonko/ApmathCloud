@@ -18,7 +18,7 @@
 var width = window.innerWidth;
 var height = window.innerHeight;
 
-var nodes = d3.range(10).map(function() { return {radius: Math.random() * 12 + 4}; }),
+var nodes = d3.range(count).map(function() { return {radius: Math.random() * 12 + 4}; }),
     root = nodes[0],
     color = d3.scale.category10();
 
