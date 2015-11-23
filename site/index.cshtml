@@ -3,8 +3,10 @@
 	var count = 100;
 	int.TryParse(countRequest, out count);
 	var gravityRequest = Request.Params["gravity"];
-	var gravity = 0.05;
-	parseFloat(gravityRequest, out gravity);
+	var gravity = parseFloat(gravityRequest);
+	if (gravity == NaN) {
+		gravity = 0.05;
+	}
 }
 <html>
 <head>
