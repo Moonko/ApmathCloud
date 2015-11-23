@@ -12,8 +12,8 @@
 <body>
 <script type="text/javascript">
 
-var width = $(window).width,
-    height = %(window).height;
+var width = screen.width,
+    height = screen.height;
 
 var nodes = d3.range(200).map(function() { return {radius: Math.random() * 12 + 4}; }),
     root = nodes[0],
