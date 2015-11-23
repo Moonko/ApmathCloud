@@ -2,9 +2,7 @@
 	var countRequest = Request.Params["count"];
 	var count = 100;
 	var clear = int.TryParse(countRequest, out count);
-	var gravityRequest = Request.Params["gravity"];
-	var gravity = 0.05f;
-	float.TryParse(gravityRequest, out gravity);
+  var errorMessage "No count provided, please input http://rychkov.azurewebsites.net/?count=100";
 }
 <html>
 <head>
@@ -14,6 +12,10 @@
 </head>
 <body>
 <script type="text/javascript">
+
+if (!@clear) {
+  Response.Write(String.Format("alert({0});", errorMessage));
+}
 
 var width = window.innerWidth;
 var height = window.innerHeight;
@@ -26,7 +28,7 @@ root.radius = 0;
 root.fixed = true;
 
 var force = d3.layout.force()
-    .gravity(@gravity);
+    .gravity(0.05);
     .charge(function(d, i) { return i ? 0 : -2000; })
     .nodes(nodes)
     .size([width, height]);
