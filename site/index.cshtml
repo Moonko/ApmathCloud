@@ -2,6 +2,9 @@
 	var countRequest = Request.Params["count"];
 	var count = 100;
 	var clear = int.TryParse(countRequest, out count);
+	var gravityRequest = Request.Params["gravity"];
+	var gravity = 0.05;
+	float.TryParse(gravityRequest, out gravity);
 }
 <html>
 <head>
@@ -23,7 +26,7 @@ root.radius = 0;
 root.fixed = true;
 
 var force = d3.layout.force()
-    .gravity(0.05)
+    .gravity(@gravity);
     .charge(function(d, i) { return i ? 0 : -2000; })
     .nodes(nodes)
     .size([width, height]);
