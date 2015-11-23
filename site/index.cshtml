@@ -1,7 +1,7 @@
 ﻿@{
 	var countRequest = Request.Params["count"];
 	var count = 1;
-	var clear = int.TryParse(countRequest, out count);
+	var countProvided = int.TryParse(countRequest, out count);
   var errorMessage = "No count provided, please input http://rychkov.azurewebsites.net/?count=100";
 }
 <html>
@@ -13,8 +13,8 @@
 <body>
 <script type="text/javascript">
 
-@if(!clear) {
-  Response.write("provide count!");
+@if(!countProvided) {
+  Response.Write(String.Format("alert({0});", errorMessage));
 }
 
 var width = window.innerWidth;
