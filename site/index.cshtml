@@ -1,11 +1,7 @@
 ﻿@{
-<!-- 	var countRequest = Request.Params["count"];
+	var countRequest = Request.Params["count"];
 	var count = 100;
 	int.TryParse(countRequest, out count);
-	var gravityRequest = Request.Params["gravity"];
-	var gravity = 1;
-	int.TryParse(gravityRequest, out gravity); -->
-	var gravity = get("gravity");
 }
 <html>
 <head>
@@ -19,7 +15,7 @@
 var width = window.innerWidth;
 var height = window.innerHeight;
 
-var nodes = d3.range(200).map(function() { return {radius: Math.random() * 12 + 4}; }),
+var nodes = d3.range(10).map(function() { return {radius: Math.random() * 12 + 4}; }),
     root = nodes[0],
     color = d3.scale.category10();
 
