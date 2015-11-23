@@ -13,14 +13,14 @@
 <body>
 <script type="text/javascript">
 
-@if (!clear) {
-  Response.Write(String.Format("alert({0});", errorMessage));
-}
+// @if (!clear) {
+//   Response.Write(String.Format("alert({0});", errorMessage));
+// }
 
 var width = window.innerWidth;
 var height = window.innerHeight;
 
-var nodes = d3.range(100).map(function() { return {radius: Math.random() * 12 + 4}; }),
+var nodes = d3.range(@count+1).map(function() { return {radius: Math.random() * 12 + 4}; }),
     root = nodes[0],
     color = d3.scale.category10();
 
