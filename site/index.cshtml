@@ -1,10 +1,11 @@
 ﻿@{
-	var countRequest = Request.Params["count"];
+<!-- 	var countRequest = Request.Params["count"];
 	var count = 100;
 	int.TryParse(countRequest, out count);
 	var gravityRequest = Request.Params["gravity"];
 	var gravity = 1;
-	int.TryParse(gravityRequest, out gravity);
+	int.TryParse(gravityRequest, out gravity); -->
+	var gravity = get('gravity');
 }
 <html>
 <head>
