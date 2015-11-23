@@ -1,7 +1,10 @@
 ﻿@{
 	var countRequest = Request.Params["count"];
 	var count = 100;
-<!-- 	int.TryParse(countRequest, out count); -->
+	var clear = int.TryParse(countRequest, out count);
+	if (clear == false) {
+		count = 100;
+}
 }
 <html>
 <head>
